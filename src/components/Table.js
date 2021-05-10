@@ -1,5 +1,5 @@
 import React from 'react'
-import { ROW_HEIGHT, TABLE_WIDTH } from './constants'
+import { ROW_HEIGHT, TABLE_WIDTH } from '../constants'
 
 export default function Table({table}) {
   const {name, columns} = table
@@ -23,9 +23,12 @@ export default function Table({table}) {
           {columns.map((column) => {
             return (
               <tr key={`${name}_${column.name}`}>
-                <td className="border border-blue-500 px-2" style={{height: ROW_HEIGHT}}>
+                <td 
+                  className="border border-blue-500 px-2"
+                  style={{height: ROW_HEIGHT}}
+                  id={`column_${name}_${column.name}`}
+                >
                   <div
-                    id={`column_${name}_${column.name}`}
                     className="flex justify-between items-center"
                   >
                     <span className="">{column.name}</span>
