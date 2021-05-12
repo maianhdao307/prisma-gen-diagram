@@ -168,18 +168,31 @@ const arrangeItems = async (tables, refs) => {
     }
   })
 
-  return tablePosData
+  return {
+    tables: tablePosData,
+    width: elkResponse.width,
+    height: elkResponse.height,
+  }
 }
 
 function Diagram({ tables: initialTables, refs }) {
   const [tables, setTables] = useState(initialTables)
   const [columnPoints, setColumnPoints] = useState([])
+  const [canvasSize, setCanvasSize] = useState({})
   const draw = useRef(null)
 
   useEffect(() => {
-    draw.current = SVG().addTo('#draggables').size('100%', '100%')
+    if (!draw.current) {
+      draw.current = SVG().addTo('#draggables').size('100%', '100%')
+    }
 
-    arrangeItems(initialTables, refs).then(newTables => setTables(newTables))
+    arrangeItems(initialTables, refs).then(response => {
+      setTables(response.tables)
+      setCanvasSize({
+        width: response.width,
+        height: response.height
+      })
+    })
   }, [initialTables, refs])
 
   useEffect(() => {
@@ -304,13 +317,18 @@ function Diagram({ tables: initialTables, refs }) {
   }
 
   return (
+    <div className='w-screen h-screen overflow-auto'>
+
     <div
       id="canvas"
-      className="w-screen h-screen"
+      className="relative w-full h-full"
+      style={{
+        minHeight: canvasSize.height,
+        minWidth: canvasSize.width
+      }}
     >
       <div 
-        className="w-full h-full"
-        style={{}} 
+        className="w-full h-full absolute top-0 left-0"
         id="draggables"
       >
         {tables.length > 0 &&
@@ -339,6 +357,8 @@ function Diagram({ tables: initialTables, refs }) {
           })}
       </div>
     </div>
+    </div>
+
   )
 }
 

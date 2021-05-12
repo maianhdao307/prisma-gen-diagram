@@ -1,53 +1,47 @@
 import Diagram from './components/Diagram';
+import { useEffect, useState } from 'react';
+import schema from './schema.json'
 
 function App() {
-  const tables = [
-    {
-      id: 'table_Product',
-      name: 'Product',
-      columns: [
-        {
-          name: 'id',
-          type: 'string'
-        },
-        {
-          name: 'name',
-          type: 'string'
-        },
-        {
-          name: 'categoryId',
-          type: 'string'
-        }
-      ]
-    },
-    {
-      id: 'table_Category',
-      name: 'Category',
-      columns: [
-        {
-          name: 'id',
-          type: 'string'
-        },
-        {
-          name: 'name',
-          type: 'string'
-        },
-      ]
-    }
-  ]
+  const [tables, setTables] = useState([])
+  const [refs, setRefs] = useState([])
 
-  const refs = [
-    {
-      foreign: {
-        table: 'Product',
-        column: 'categoryId'
-      },
-      primary: {
-        table: 'Category',
-        column: 'id'
+
+  useEffect(()=> {
+    const refs = []
+
+    const tables = Object.keys(schema).map(tableName => {
+      const columnsObj = schema[tableName]
+      return {
+        id: tableName,
+        name: tableName,
+        columns: Object.keys(columnsObj).map(colName => {
+          const col = columnsObj[colName]
+          if (col.foreignKey) {
+            refs.push({
+              foreign: {
+                table: tableName,
+                column: colName
+              },
+              primary: {
+                table: col.references,
+                column: '_id'
+              }
+            })
+          }
+          return {
+            name: colName,
+            type: col.type
+          }
+        })
       }
-    }
-  ]
+    })
+
+    setTables(tables)
+    setRefs(refs)
+
+
+  }, [])
 
   return <Diagram tables={tables} refs={refs}/>
 }

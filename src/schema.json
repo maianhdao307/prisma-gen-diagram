@@ -1,0 +1,2180 @@
+{
+	"PostAndCategory": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"post": {
+			"foreignKey": true,
+			"references": "Post",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"category": {
+			"foreignKey": true,
+			"references": "PostCategory",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Token": {},
+	"Comment": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"ofComment": {
+			"foreignKey": true,
+			"references": "Comment",
+			"key": true,
+			"type": "undefined",
+			"required": false
+		},
+		"content": {
+			"type": "string",
+			"required": true
+		},
+		"post": {
+			"foreignKey": true,
+			"references": "Post",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"owner": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"bigQuestion": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"numOfReplies": {
+			"type": "number",
+			"required": true
+		},
+		"updatedAt": {
+			"type": "Date",
+			"required": true
+		}
+	},
+	"PostCategory": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"children": {
+			"type": "Array",
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"cover": {
+			"type": "string",
+			"required": true
+		},
+		"parent": {
+			"foreignKey": true,
+			"references": "PostCategory",
+			"key": true,
+			"type": "Object",
+			"required": true
+		}
+	},
+	"ClassroomTest": {},
+	"ClassroomUser": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"classroom": {
+			"foreignKey": true,
+			"references": "Classroom",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"role": {
+			"type": "number",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"status": {
+			"type": "number",
+			"required": true
+		},
+		"email": {
+			"type": "undefined",
+			"required": false
+		}
+	},
+	"LovePost": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"post": {
+			"foreignKey": true,
+			"references": "Post",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"user": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"TestSet": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"difficulty": {
+			"type": "number",
+			"required": true
+		},
+		"status": {
+			"type": "number",
+			"required": true
+		},
+		"tagList": {
+			"type": "Array",
+			"required": true
+		},
+		"privacy": {
+			"type": "number",
+			"required": true
+		},
+		"showFullTest": {
+			"type": "boolean",
+			"required": true
+		},
+		"isTestTime": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowResumeAfterExit": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowNext": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowPrevious": {
+			"type": "boolean",
+			"required": true
+		},
+		"reviewPermission": {
+			"type": "number",
+			"required": true
+		},
+		"allowDoManyTimes": {
+			"type": "boolean",
+			"required": true
+		},
+		"scoreMethod": {
+			"type": "number",
+			"required": true
+		},
+		"avgRating": {
+			"type": "number",
+			"required": true
+		},
+		"takenCount": {
+			"type": "number",
+			"required": true
+		},
+		"takenUserCount": {
+			"type": "number",
+			"required": true
+		},
+		"questionCount": {
+			"type": "number",
+			"required": true
+		},
+		"categoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"bucketList": {
+			"type": "Array",
+			"required": true
+		},
+		"versionList": {
+			"type": "Array",
+			"required": true
+		},
+		"sectionList": {
+			"type": "Array",
+			"required": true
+		},
+		"owner": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"numOfRatings": {
+			"type": "number",
+			"required": true
+		},
+		"hideRankingTable": {
+			"type": "boolean",
+			"required": true
+		},
+		"isBlocked": {
+			"type": "boolean",
+			"required": true
+		},
+		"preventCheatingMode": {
+			"type": "boolean",
+			"required": true
+		},
+		"userCategoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"title": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"cover": {
+			"type": "string",
+			"required": true
+		},
+		"code": {
+			"type": "string",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"releasedAt": {
+			"type": "Date",
+			"required": true
+		},
+		"updateHistory": {
+			"type": "Array",
+			"required": true
+		},
+		"scoreTitleList": {
+			"type": "Array",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"duration": {
+			"type": "number",
+			"required": false
+		},
+		"expiredAt": {
+			"type": "undefined",
+			"required": false
+		},
+		"mainVersion": {
+			"foreignKey": true,
+			"references": "TestSetVersion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"password": {
+			"type": "string",
+			"required": true
+		},
+		"passScore": {
+			"type": "number",
+			"required": false
+		}
+	},
+	"Choice": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"content": {
+			"type": "string",
+			"required": true
+		},
+		"requireMoreInfo": {
+			"type": "boolean",
+			"required": true
+		},
+		"label": {
+			"type": "string",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"PricingPackage": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"priceVND": {
+			"type": "number",
+			"required": true
+		},
+		"priceUSD": {
+			"type": "number",
+			"required": true
+		},
+		"version": {
+			"type": "number",
+			"required": true
+		},
+		"testQuestionAmount": {
+			"type": "number",
+			"required": true
+		},
+		"allowInviteToDoTest": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowInviteToEditTest": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowImportQuestion": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowImportStudent": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowImportTeacher": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowImportParent": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowExportReport": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowRequestApp": {
+			"type": "boolean",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"discount": {
+			"type": "number",
+			"required": false
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"RealtimeRoomSession": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"pause": {
+			"type": "boolean",
+			"required": true
+		},
+		"userList": {
+			"type": "Array",
+			"required": true
+		},
+		"guestList": {
+			"type": "Array",
+			"required": true
+		},
+		"hideParticipantQuestion": {
+			"type": "boolean",
+			"required": true
+		},
+		"allowResumeAfterExit": {
+			"type": "boolean",
+			"required": true
+		},
+		"realtimeRoom": {
+			"foreignKey": true,
+			"references": "RealtimeRoom",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"pauseTimeList": {
+			"type": "Array",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"testSet": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"testVersion": {
+			"foreignKey": true,
+			"references": "TestSetVersion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"startTime": {
+			"type": "Date",
+			"required": true
+		},
+		"endTime": {
+			"type": "Date",
+			"required": true
+		},
+		"currentQuestion": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Classroom": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"privacy": {
+			"type": "number",
+			"required": true
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"code": {
+			"type": "string",
+			"required": true
+		},
+		"owner": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"SavedTest": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Collection": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		},
+		"categoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"userCategoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"postList": {
+			"type": "Array",
+			"required": true
+		},
+		"isBlocked": {
+			"type": "boolean",
+			"required": true
+		},
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"cover": {
+			"type": "string",
+			"required": true
+		},
+		"status": {
+			"type": "number",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"owner": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"QuestionComment": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"ofComment": {
+			"foreignKey": true,
+			"references": "QuestionComment",
+			"key": true,
+			"type": "Object",
+			"required": false
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"content": {
+			"type": "string",
+			"required": true
+		},
+		"post": {
+			"foreignKey": true,
+			"references": "Post",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"bigQuestion": {
+			"foreignKey": true,
+			"references": "BigQuestion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"owner": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"question": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"updatedAt": {
+			"type": "Date",
+			"required": true
+		},
+		"numOfReplies": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"PostQuestion": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"question": {
+			"foreignKey": true,
+			"references": "BigQuestion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"post": {
+			"foreignKey": true,
+			"references": "Post",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"SiteSetting": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"bannerList": {
+			"type": "Array",
+			"required": true
+		},
+		"categoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"topPostList": {
+			"type": "Array",
+			"required": true
+		},
+		"topCategoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"postCategoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"siteTopCategoryList": {
+			"type": "Array",
+			"required": true
+		}
+	},
+	"TestBigQuestion": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"bigQuestion": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"duration": {
+			"type": "undefined",
+			"required": false
+		}
+	},
+	"TestCategory": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"category": {
+			"foreignKey": true,
+			"references": "Category",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"User": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"role": {
+			"type": "string",
+			"required": true
+		},
+		"name": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"gender": {
+			"type": "string",
+			"required": true
+		},
+		"isAdmin": {
+			"type": "boolean",
+			"required": true
+		},
+		"isVerified": {
+			"type": "boolean",
+			"required": true
+		},
+		"isVerifiedEmail": {
+			"type": "boolean",
+			"required": true
+		},
+		"status": {
+			"type": "number",
+			"required": true
+		},
+		"isEmailPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"email": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"password": {
+			"type": "string",
+			"required": true
+		},
+		"avatar": {
+			"type": "string",
+			"required": true
+		},
+		"username": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"birthday": {
+			"type": "Date",
+			"required": false
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"rootCategoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"tagList": {
+			"type": "Array",
+			"required": true
+		},
+		"topPostList": {
+			"type": "Array",
+			"required": true
+		},
+		"GoogleId": {
+			"type": "string",
+			"required": true
+		},
+		"company": {
+			"type": "undefined",
+			"required": false
+		},
+		"description": {
+			"type": "undefined",
+			"required": false
+		},
+		"facebook": {
+			"type": "string",
+			"required": false
+		},
+		"jobTitle": {
+			"type": "undefined",
+			"required": false
+		},
+		"phoneNumber": {
+			"type": "undefined",
+			"required": false
+		},
+		"website": {
+			"type": "string",
+			"required": false
+		},
+		"work": {
+			"type": "undefined",
+			"required": false
+		},
+		"isBirthdayPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"coverImg": {
+			"type": "string",
+			"required": true
+		},
+		"profileSectionList": {
+			"type": "Array",
+			"required": true
+		},
+		"coverDescription": {
+			"type": "string",
+			"required": true
+		},
+		"coverTitle": {
+			"type": "string",
+			"required": true
+		},
+		"isGenderPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"isPhoneNumberPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"isFacebookPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"isCompanyPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"isJobTitlePrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"isWebsitePrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"isWorkPrivate": {
+			"type": "boolean",
+			"required": true
+		},
+		"notVerifiedEmail": {
+			"type": "undefined",
+			"required": false
+		}
+	},
+	"TestSetVersion": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"sectionList": {
+			"type": "Array",
+			"required": true
+		},
+		"ofTestSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"bigQuestionListBySection": {
+			"type": "Object",
+			"structure": {
+				"5e9b13936e72882b952bcb12": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bebf28951d50894893559": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9f90210ac294245c7e9670": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc990ec9928072ae63094": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc990ec9928072ae63091": {
+					"type": "Array",
+					"required": true
+				},
+				"5eeb468760c85936a1bef12b": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c94aa9bbd2a38730efd7d": {
+					"type": "Array",
+					"required": true
+				},
+				"5f12ef884cd68906dc3027f4": {
+					"type": "Array",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"choiceListBySmallQuestion": {
+			"type": "Object",
+			"structure": {
+				"5e9b0b346e72882b952bca64": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0bd06e72882b952bca6b": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0d746e72882b952bca72": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0d746e72882b952bca79": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0dd86e72882b952bca80": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0e1b6e72882b952bca87": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0e5d6e72882b952bca8e": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0ed46e72882b952bca95": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0f3f6e72882b952bca9c": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0f796e72882b952bcaa3": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b0f796e72882b952bcaaa": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b102d6e72882b952bcab1": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b108f6e72882b952bcab8": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b10c96e72882b952bcabf": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b110c6e72882b952bcac6": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b11766e72882b952bcacd": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b12476e72882b952bcad3": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b12ab6e72882b952bcae1": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b12e26e72882b952bcae8": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b13546e72882b952bcaef": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9b13876e72882b952bcaf6": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9be6a38951d5089489350a": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9be8328951d50894893515": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9be86d8951d5089489351c": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9be8c08951d50894893523": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9be93e8951d5089489352a": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9be9958951d50894893532": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bea348951d5089489353a": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bea738951d50894893541": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9beaaf8951d50894893549": {
+					"type": "Array",
+					"required": true
+				},
+				"5e91571f1e2dd21f7297ad81": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9156cb1e2dd21f7297ad7a": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9156361e2dd21f7297ad6c": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9156821e2dd21f7297ad73": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9154de1e2dd21f7297ad50": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9155391e2dd21f7297ad57": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc2a1ec9928072ae63058": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc804ec9928072ae63080": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc5caec9928072ae63068": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc0a1ec9928072ae63043": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bc678ec9928072ae63071": {
+					"type": "Array",
+					"required": true
+				},
+				"5e9bcaf4ec9928072ae63098": {
+					"type": "Array",
+					"required": true
+				},
+				"5eeb467c60c85936a1bef124": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c8c279bbd2a38730efd22": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c8f349bbd2a38730efd3f": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c90099bbd2a38730efd47": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c91479bbd2a38730efd4f": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c93ed9bbd2a38730efd6d": {
+					"type": "Array",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"rightChoiceListBySmallQuestion": {
+			"type": "Object",
+			"structure": {
+				"5e9bc17dec9928072ae6304a": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c8ce79bbd2a38730efd29": {
+					"type": "Array",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"blankListBySmallQuestion": {
+			"type": "Object",
+			"structure": {
+				"5e9bc1ffec9928072ae63055": {
+					"type": "Array",
+					"required": true
+				},
+				"5e8c8daa9bbd2a38730efd3b": {
+					"type": "Array",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"code": {
+			"type": "string",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"UserCategory": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"children": {
+			"type": "Array",
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"parent": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		}
+	},
+	"Rating": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"numOfStars": {
+			"type": "number",
+			"required": true
+		},
+		"comment": {
+			"type": "string",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Notification": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"isRead": {
+			"type": "boolean",
+			"required": true
+		},
+		"ofUser": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"causingUser": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"realtimeRoom": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"causingTest": {
+			"key": true,
+			"type": "Object",
+			"required": false
+		}
+	},
+	"SmallQuestion": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"audioList": {
+			"type": "Array",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"questionType": {
+			"type": "number",
+			"required": true
+		},
+		"choiceList": {
+			"type": "Array",
+			"required": true
+		},
+		"leftChoiceList": {
+			"type": "Array",
+			"required": true
+		},
+		"rightChoiceList": {
+			"type": "Array",
+			"required": true
+		},
+		"blankList": {
+			"type": "Array",
+			"required": true
+		},
+		"answerList": {
+			"type": "Array",
+			"required": true
+		},
+		"ofBigQuestion": {
+			"foreignKey": true,
+			"references": "BigQuestion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"numChoiceLayout": {
+			"type": "number",
+			"required": true
+		},
+		"question": {
+			"type": "string",
+			"required": true
+		},
+		"content": {
+			"type": "string",
+			"required": true
+		},
+		"explanation": {
+			"type": "string",
+			"required": true
+		},
+		"hasManyAnswer": {
+			"type": "boolean",
+			"required": true
+		},
+		"fileList": {
+			"type": "Array",
+			"required": true
+		},
+		"answerFileList": {
+			"type": "Array",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"TestSession": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"endTime": {
+			"type": "Date",
+			"required": false
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSetVersion": {
+			"foreignKey": true,
+			"references": "TestSetVersion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"startTime": {
+			"type": "Date",
+			"required": true
+		},
+		"questionSessionList": {
+			"type": "Array",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"currentQuestion": {
+			"type": "number",
+			"required": true
+		},
+		"isExit": {
+			"type": "boolean",
+			"required": true
+		},
+		"userScore": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Post": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"coverType": {
+			"type": "number",
+			"required": true
+		},
+		"tagList": {
+			"type": "Array",
+			"required": true
+		},
+		"cover": {
+			"type": "string",
+			"required": true
+		},
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		},
+		"content": {
+			"type": "string",
+			"required": true
+		},
+		"category": {
+			"foreignKey": true,
+			"references": "UserCategory",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"isBlocked": {
+			"type": "boolean",
+			"required": true
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"categoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"userCategoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"owner": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"privacy": {
+			"type": "number",
+			"required": true
+		},
+		"numOfComments": {
+			"type": "number",
+			"required": true
+		},
+		"numOfLoves": {
+			"type": "number",
+			"required": true
+		},
+		"adminApproved": {
+			"type": "boolean",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"updatedAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"isDeleted": {
+			"type": "boolean",
+			"required": true
+		},
+		"siteCategory": {
+			"foreignKey": true,
+			"references": "Category",
+			"key": true,
+			"type": "Object",
+			"required": true
+		}
+	},
+	"Section": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"bigQuestionList": {
+			"type": "Array",
+			"required": true
+		},
+		"title": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Following": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"followee": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"follower": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"QuestionScore": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"scoreOption": {
+			"type": "boolean",
+			"required": true
+		},
+		"scoreByChoices": {
+			"type": "undefined",
+			"required": false
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"smallQuestion": {
+			"foreignKey": true,
+			"references": "SmallQuestion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"score": {
+			"type": "number",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"BuildAppRequest": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"status": {
+			"type": "number",
+			"required": true
+		},
+		"platform": {
+			"type": "number",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"appName": {
+			"type": "string",
+			"required": true
+		},
+		"appIcon": {
+			"type": "string",
+			"required": true
+		},
+		"introList": {
+			"type": "Array",
+			"required": true
+		},
+		"mainColor": {
+			"type": "string",
+			"required": true
+		},
+		"fontLink": {
+			"type": "string",
+			"required": true
+		},
+		"requestUser": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"updatedAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"TestInvitation": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"isAccepted": {
+			"type": "boolean",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"testSet": {
+			"foreignKey": true,
+			"references": "TestSet",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"permission": {
+			"type": "number",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"testSetVersion": {
+			"foreignKey": true,
+			"references": "TestSetVersion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"email": {
+			"type": "string",
+			"required": false
+		}
+	},
+	"BigQuestion": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"categoryList": {
+			"type": "Array",
+			"required": true
+		},
+		"tagList": {
+			"type": "Array",
+			"required": true
+		},
+		"difficulty": {
+			"type": "number",
+			"required": true
+		},
+		"smallQuestionList": {
+			"type": "Array",
+			"required": true
+		},
+		"lang": {
+			"type": "string",
+			"required": true
+		},
+		"type": {
+			"type": "number",
+			"required": true
+		},
+		"owner": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"content": {
+			"type": "string",
+			"required": true
+		},
+		"title": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"hasManyQuestion": {
+			"type": "boolean",
+			"required": true
+		},
+		"folder": {
+			"type": "undefined",
+			"required": false
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"updatedAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"isBlocked": {
+			"type": "boolean",
+			"required": true
+		},
+		"postList": {
+			"type": "Array",
+			"required": true
+		}
+	},
+	"UserPackage": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"pricingPackage": {
+			"foreignKey": true,
+			"references": "PricingPackage",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"user": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"expiredAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"RoomInvitation": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"realtimeRoom": {
+			"foreignKey": true,
+			"references": "RealtimeRoom",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"user": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"permission": {
+			"type": "number",
+			"required": true
+		},
+		"email": {
+			"type": "string",
+			"required": false
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"Banner": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		},
+		"cover": {
+			"type": "string",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"link": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"Category": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"children": {
+			"type": "Array",
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"cover": {
+			"type": "string",
+			"required": true
+		},
+		"order": {
+			"type": "number",
+			"required": true
+		},
+		"parent": {
+			"foreignKey": true,
+			"references": "Category",
+			"key": true,
+			"type": "undefined",
+			"required": false
+		},
+		"shortName": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"QuestionCategory": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"question": {
+			"foreignKey": true,
+			"references": "BigQuestion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"category": {
+			"foreignKey": true,
+			"references": "Category",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"UserAnswer": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"answerList": {
+			"type": "Array",
+			"required": true
+		},
+		"moreInfoChoiceList": {
+			"type": "Array",
+			"required": true
+		},
+		"testSession": {
+			"foreignKey": true,
+			"references": "TestSession",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"time": {
+			"type": "Date",
+			"required": true
+		},
+		"smallQuestion": {
+			"foreignKey": true,
+			"references": "SmallQuestion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"fileList": {
+			"type": "Array",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"essayAnswer": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"Tag": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"keyword": {
+			"foreignKey": true,
+			"references": "Tag",
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		}
+	},
+	"RealtimeRoom": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"isActive": {
+			"type": "boolean",
+			"required": true
+		},
+		"name": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"privacy": {
+			"type": "number",
+			"required": true
+		},
+		"password": {
+			"type": "string",
+			"required": true
+		},
+		"owner": {
+			"foreignKey": true,
+			"references": "User",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"code": {
+			"type": "string",
+			"required": true
+		},
+		"createdAt": {
+			"type": "Date",
+			"required": true
+		},
+		"__v": {
+			"type": "number",
+			"required": true
+		},
+		"currentSession": {
+			"foreignKey": true,
+			"references": "RealtimeRoomSession",
+			"key": true,
+			"type": "Object",
+			"required": true
+		}
+	},
+	"Traffic": {}
+}
