@@ -175,6 +175,8 @@ const arrangeItems = async (tables, refs) => {
   }
 }
 
+let timeout;
+
 function Diagram({ tables: initialTables, refs }) {
   const [tables, setTables] = useState(initialTables)
   const [columnPoints, setColumnPoints] = useState([])
@@ -313,7 +315,10 @@ function Diagram({ tables: initialTables, refs }) {
       x: data.x,
       y: data.y
     }
-    setTables(newTables)
+    cancelAnimationFrame(timeout);
+    timeout = requestAnimationFrame(() => {
+      setTables(newTables)
+    })
   }
 
   return (
